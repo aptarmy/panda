@@ -43,6 +43,41 @@ if ( !class_exists( 'APT_AC000' ) ) {
     }
 
     function widget( $args, $instance ) {
+		
+		// Set default value
+		// Set default arguments
+      $instance = wp_parse_args( (array) $instance, array(
+        'title' => __('Ultimate Posts', 'panda'),
+        'class' => '',
+        'title_link' => '' ,
+        'number' => '5',
+        'types' => 'post',
+        'cats' => '',
+        'tags' => '',
+        'atcat' => false,
+        'thumb_size' => 'thumbnail',
+        'attag' => false,
+        'excerpt_length' => 10,
+        'excerpt_readmore' => __('Read more &rarr;', 'panda'),
+        'order' => 'DESC',
+        'orderby' => 'date',
+        'meta_key' => '',
+        'sticky' => 'show',
+        'show_cats' => false,
+        'show_tags' => false,
+        'show_title' => true,
+        'show_date' => true,
+        'date_format' => get_option('date_format') . ' ' . get_option('time_format'),
+        'show_author' => true,
+        'show_comments' => false,
+        'show_excerpt' => true,
+        'show_content' => false,
+        'show_readmore' => true,
+        'show_thumbnail' => true,
+        'custom_fields' => '',
+        'before_posts' => '',
+        'after_posts' => ''
+      ) );
 
       global $post;
       $current_post_id =  $post->ID;
