@@ -1,0 +1,9 @@
+@media (min-width: 768px) {
+	@import "_min-width-768.scss";
+}
+@media (min-width: 992px) {
+	@import "_min-width-992.scss";
+}
+@media (min-width: 1200px) {
+	@import "_min-width-1200.scss";
+}

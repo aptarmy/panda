@@ -1,0 +1,35 @@
+.header-nav {
+	ul {
+		
+	}
+	li {
+		
+		&:hover > a,
+		&.focus > a {
+			
+		}
+	}
+	a {
+		
+	}
+
+	.current_page_item > a,
+	.current-menu-item > a,
+	.current_page_ancestor > a,
+	.current-menu-ancestor > a {
+		
+	}
+}
+
+/* Navigation. */
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+	.nav-previous {
+		
+	}
+	.nav-next {
+		
+	}
+}
