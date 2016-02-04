@@ -270,36 +270,32 @@ if ( !class_exists( 'APT_AC000' ) ) {
 
       // Set default arguments
       $instance = wp_parse_args( (array) $instance, array(
-        'title' => __('Ultimate Posts', 'panda'),
-        'class' => '',
-        'title_link' => '' ,
-        'number' => '5',
-        'types' => 'post',
-        'cats' => '',
-        'tags' => '',
-        'atcat' => false,
-        'thumb_size' => 'thumbnail',
-        'attag' => false,
-        'excerpt_length' => 10,
-        'excerpt_readmore' => __('Read more &rarr;', 'panda'),
-        'order' => 'DESC',
-        'orderby' => 'date',
-        'meta_key' => '',
-        'sticky' => 'show',
-        'show_cats' => false,
-        'show_tags' => false,
-        'show_title' => true,
-        'show_date' => true,
-        'date_format' => get_option('date_format') . ' ' . get_option('time_format'),
-        'show_author' => true,
-        'show_comments' => false,
-        'show_excerpt' => true,
-        'show_content' => false,
-        'show_readmore' => true,
-        'show_thumbnail' => true,
-        'custom_fields' => '',
-        'before_posts' => '',
-        'after_posts' => ''
+        'title' => __('Ultimate Posts', 'panda'), // General
+        'class' => '',// General
+        'title_link' => '' , // General
+        'number' => '5', // Display
+        'types' => 'post', // Filter
+        'cats' => '', // Filter
+        'tags' => '', // Filter
+        'atcat' => false, // Filter : Show noly current Category
+        'thumb_size' => 'thumbnail', 
+        'attag' => false,  // Filter : Show noly current Tag
+        'excerpt_length' => 10, // Display
+        'excerpt_readmore' => __('Read more &rarr;', 'panda'), // Display
+        'order' => 'DESC', // Order
+        'orderby' => 'date', // Order
+        'meta_key' => '', // Order
+        'sticky' => 'show', // Filter
+        'date_format' => get_option('date_format') . ' ' . get_option('time_format'), // Display
+        'show_author' => true, // Display
+        'show_comments' => false, // Display
+        'show_excerpt' => true, // Display
+        'show_content' => false, // Display
+        'show_readmore' => true, // Display
+        'show_thumbnail' => true, // Display
+        'custom_fields' => '', // Display
+        'before_posts' => '', // General
+        'after_posts' => '' // General
       ) );
 
       // Or use the instance
