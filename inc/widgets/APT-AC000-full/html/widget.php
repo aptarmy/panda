@@ -1,14 +1,14 @@
 <?php if ($instance['before_posts']) : ?>
-  <div class="APT-AC000-before">
+  <div class="APT-AC000-full-before">
     <?php echo wpautop($instance['before_posts']); ?>
   </div>
 <?php endif; ?>
 
-<div class="APT-AC000-posts hfeed">
+<div class="APT-AC000-full-posts hfeed">
 
-  <?php if ($APT_AC000_query->have_posts()) : ?>
+  <?php if ($APT_AC000_full_query->have_posts()) : ?>
 
-      <?php while ($APT_AC000_query->have_posts()) : $APT_AC000_query->the_post(); ?>
+      <?php while ($APT_AC000_full_query->have_posts()) : $APT_AC000_full_query->the_post(); ?>
 
         <?php $current_post = ($post->ID == $current_post_id && is_single()) ? 'active' : ''; ?>
 
@@ -139,7 +139,7 @@
 
   <?php else : ?>
 
-    <p class="APT-AC000-not-found">
+    <p class="APT-AC000-full-not-found">
       <?php _e('No posts found.', 'panda'); ?>
     </p>
 
@@ -148,7 +148,7 @@
 </div>
 
 <?php if ($instance['after_posts']) : ?>
-  <div class="APT-AC000-after">
+  <div class="APT-AC000-full-after">
     <?php echo wpautop($instance['after_posts']); ?>
   </div>
 <?php endif; ?>

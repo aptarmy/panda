@@ -1,8 +1,8 @@
 <?php
 
-if ( !class_exists( 'APT_AC000' ) ) {
+if ( !class_exists( 'APT_AC000_full' ) ) {
 
-  class APT_AC000 extends WP_Widget {
+  class APT_AC000_full extends WP_Widget {
 
     function __construct() {
 
@@ -15,8 +15,8 @@ if ( !class_exists( 'APT_AC000' ) ) {
       );
 
       parent::__construct(
-        'APT-AC000',
-        __( 'APT-AC000', 'panda' ),
+        'APT-AC000-full',
+        __( 'APT-AC000-full', 'panda' ),
         $widget_options,
         $control_options
       );
@@ -28,56 +28,21 @@ if ( !class_exists( 'APT_AC000' ) ) {
       add_action('switch_theme', array(&$this, 'clear_widget_cache'));
       add_action('admin_enqueue_scripts', array(&$this, 'enqueue_admin_scripts'));
 
-      if (apply_filters('APT_AC000_enqueue_styles', true) && !is_admin()) {
+      if (apply_filters('APT_AC000_full_enqueue_styles', true) && !is_admin()) {
         add_action('wp_enqueue_scripts', array(&$this, 'enqueue_theme_scripts'));
       }
     }
 
     function enqueue_admin_scripts() {
-      wp_enqueue_style('APT_AC000_admin_styles', get_template_directory_uri() . '/inc/widgets/APT-AC000/css/APT-AC000-admin.min.css');
-      wp_enqueue_script('APT_AC000_admin_scripts', get_template_directory_uri() . '/inc/widgets/APT-AC000/js/APT-AC000-admin.min.js', array('jquery'), null, true);
+      wp_enqueue_style('APT_AC000_full_admin_styles', get_template_directory_uri() . '/inc/widgets/APT-AC000-full/css/form.css');
+      wp_enqueue_script('APT_AC000_full_admin_scripts', get_template_directory_uri() . '/inc/widgets/APT-AC000-full/js/form.js', array('jquery'), null, true);
     }
 
     function enqueue_theme_scripts() {
-      wp_enqueue_style('APT_AC000_theme_standard', get_template_directory_uri() . '/inc/widgets/APT-AC000/css/APT-AC000-theme-standard.min.css');
+      wp_enqueue_style('APT_AC000_full_theme_standard', get_template_directory_uri() . '/inc/widgets/APT-AC000-full/css/widget.css');
     }
 
     function widget( $args, $instance ) {
-		
-		// Set default value
-		// Set default arguments
-      $instance = wp_parse_args( (array) $instance, array(
-        'title' => __('Ultimate Posts', 'panda'),
-        'class' => '',
-        'title_link' => '' ,
-        'number' => '5',
-        'types' => 'post',
-        'cats' => '',
-        'tags' => '',
-        'atcat' => false,
-        'thumb_size' => 'thumbnail',
-        'attag' => false,
-        'excerpt_length' => 10,
-        'excerpt_readmore' => __('Read more &rarr;', 'panda'),
-        'order' => 'DESC',
-        'orderby' => 'date',
-        'meta_key' => '',
-        'sticky' => 'show',
-        'show_cats' => false,
-        'show_tags' => false,
-        'show_title' => true,
-        'show_date' => true,
-        'date_format' => get_option('date_format') . ' ' . get_option('time_format'),
-        'show_author' => true,
-        'show_comments' => false,
-        'show_excerpt' => true,
-        'show_content' => false,
-        'show_readmore' => true,
-        'show_thumbnail' => true,
-        'custom_fields' => '',
-        'before_posts' => '',
-        'after_posts' => ''
-      ) );
 
       global $post;
       $current_post_id =  $post->ID;
@@ -192,12 +157,12 @@ if ( !class_exists( 'APT_AC000' ) ) {
         $args[key($sticky_query)] = reset($sticky_query);
       }
 
-      $args = apply_filters('APT_AC000_wp_query_args', $args, $instance, $this->id_base);
+      $args = apply_filters('APT_AC000_full_wp_query_args', $args, $instance, $this->id_base);
 
-      $APT_AC000_query = new WP_Query($args);
+      $APT_AC000_full_query = new WP_Query($args);
 
 	  // HTML to show widget on front-end
-      require get_template_directory() . '/inc/widgets/APT-AC000/html/widget.php';
+      require get_template_directory() . '/inc/widgets/APT-AC000-full/html/widget.php';
 
       // Reset the global $the_post as this query will have stomped on it
       wp_reset_postdata();
@@ -270,32 +235,36 @@ if ( !class_exists( 'APT_AC000' ) ) {
 
       // Set default arguments
       $instance = wp_parse_args( (array) $instance, array(
-        'title' => __('Ultimate Posts', 'panda'), // General
-        'class' => '',// General
-        'title_link' => '' , // General
-        'number' => '5', // Display
-        'types' => 'post', // Filter
-        'cats' => '', // Filter
-        'tags' => '', // Filter
-        'atcat' => false, // Filter : Show noly current Category
-        'thumb_size' => 'thumbnail', // Display
-        'attag' => false,  // Filter : Show noly current Tag
-        'excerpt_length' => 10, // Display
-        'excerpt_readmore' => __('Read more &rarr;', 'panda'), // Display
-        'order' => 'DESC', // Order
-        'orderby' => 'date', // Order
-        'meta_key' => '', // Order
-        'sticky' => 'show', // Filter
-        'date_format' => get_option('date_format') . ' ' . get_option('time_format'), // Display
-        'show_author' => true, // Display
-        'show_comments' => false, // Display
-        'show_excerpt' => true, // Display
-        'show_content' => false, // Display
-        'show_readmore' => true, // Display
-        'show_thumbnail' => true, // Display
-        'custom_fields' => '', // Display
-        'before_posts' => '', // General
-        'after_posts' => '' // General
+        'title' => __('Ultimate Posts', 'panda'),
+        'class' => '',
+        'title_link' => '' ,
+        'number' => '5',
+        'types' => 'post',
+        'cats' => '',
+        'tags' => '',
+        'atcat' => false,
+        'thumb_size' => 'thumbnail',
+        'attag' => false,
+        'excerpt_length' => 10,
+        'excerpt_readmore' => __('Read more &rarr;', 'panda'),
+        'order' => 'DESC',
+        'orderby' => 'date',
+        'meta_key' => '',
+        'sticky' => 'show',
+        'show_cats' => false,
+        'show_tags' => false,
+        'show_title' => true,
+        'show_date' => true,
+        'date_format' => get_option('date_format') . ' ' . get_option('time_format'),
+        'show_author' => true,
+        'show_comments' => false,
+        'show_excerpt' => true,
+        'show_content' => false,
+        'show_readmore' => true,
+        'show_thumbnail' => true,
+        'custom_fields' => '',
+        'before_posts' => '',
+        'after_posts' => ''
       ) );
 
       // Or use the instance
@@ -372,14 +341,14 @@ if ( !class_exists( 'APT_AC000' ) ) {
       }
 	  
 	  // include form HTML
-	  require get_template_directory() . '/inc/widgets/APT-AC000/html/form.php';
+	  require get_template_directory() . '/inc/widgets/APT-AC000-full/html/form.php';
     }
 
   }
 
-  function APT_AC000_register() {
-    register_widget( 'APT_AC000' );
+  function APT_AC000_full_register() {
+    register_widget( 'APT_AC000_full' );
   }
 
-  add_action( 'widgets_init', 'APT_AC000_register' );
+  add_action( 'widgets_init', 'APT_AC000_full_register' );
 }

@@ -1,11 +1,11 @@
-<div class="APT-AC000-tabs">
-  <a class="APT-AC000-tab-item active" data-toggle="APT-AC000-tab-general"><?php _e('General', 'panda'); ?></a>
-  <a class="APT-AC000-tab-item" data-toggle="APT-AC000-tab-display"><?php _e('Display', 'panda'); ?></a>
-  <a class="APT-AC000-tab-item" data-toggle="APT-AC000-tab-filter"><?php _e('Filter', 'panda'); ?></a>
-  <a class="APT-AC000-tab-item" data-toggle="APT-AC000-tab-order"><?php _e('Order', 'panda'); ?></a>
+<div class="APT-AC000-full-tabs">
+  <a class="APT-AC000-full-tab-item active" data-toggle="APT-AC000-full-tab-general"><?php _e('General', 'panda'); ?></a>
+  <a class="APT-AC000-full-tab-item" data-toggle="APT-AC000-full-tab-display"><?php _e('Display', 'panda'); ?></a>
+  <a class="APT-AC000-full-tab-item" data-toggle="APT-AC000-full-tab-filter"><?php _e('Filter', 'panda'); ?></a>
+  <a class="APT-AC000-full-tab-item" data-toggle="APT-AC000-full-tab-order"><?php _e('Order', 'panda'); ?></a>
 </div>
 
-<div class="APT-AC000-tab APT-AC000-tab-general">
+<div class="APT-AC000-full-tab APT-AC000-full-tab-general">
 
   <p>
 	<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title', 'panda' ); ?>:</label>
@@ -34,7 +34,7 @@
 
 </div>
 
-<div class="APT-AC000-tab APT-AC000-hide APT-AC000-tab-display">
+<div class="APT-AC000-full-tab APT-AC000-full-hide APT-AC000-full-tab-display">
 
   <p>
 	<label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of posts', 'panda' ); ?>:</label>
@@ -130,7 +130,7 @@
 
 </div>
 
-<div class="APT-AC000-tab APT-AC000-hide APT-AC000-tab-filter">
+<div class="APT-AC000-full-tab APT-AC000-full-hide APT-AC000-full-tab-filter">
 
   <p>
 	<input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('atcat'); ?>" name="<?php echo $this->get_field_name('atcat'); ?>" <?php checked( (bool) $atcat, true ); ?> />
@@ -191,7 +191,7 @@
 
 </div>
 
-<div class="APT-AC000-tab APT-AC000-hide APT-AC000-tab-order">
+<div class="APT-AC000-full-tab APT-AC000-full-hide APT-AC000-full-tab-order">
 
   <p>
 	<label for="<?php echo $this->get_field_id('orderby'); ?>"><?php _e('Order by', 'panda'); ?>:</label>
