@@ -278,7 +278,7 @@ if ( !class_exists( 'APT_AC000' ) ) {
         'cats' => '', // Filter
         'tags' => '', // Filter
         'atcat' => false, // Filter : Show noly current Category
-        'thumb_size' => 'thumbnail', 
+        'thumb_size' => 'thumbnail', // Display
         'attag' => false,  // Filter : Show noly current Tag
         'excerpt_length' => 10, // Display
         'excerpt_readmore' => __('Read more &rarr;', 'panda'), // Display
