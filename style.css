@@ -462,59 +462,6 @@ textarea {
 /*--------------------------------------------------------------
 # Site
 --------------------------------------------------------------*/
-.site-header {
-  height: 50px;
-  padding: 0 15px;
-  border-bottom: 1px solid #ccc; }
-  .site-header .header-branding {
-    height: 100%;
-    float: left; }
-    .site-header .header-branding .branding-image {
-      height: 100%; }
-      .site-header .header-branding .branding-image img {
-        height: 100%;
-        float: left; }
-    .site-header .header-branding .branding-title {
-      font-size: 20.8px;
-      font-size: 1.3rem;
-      line-height: 50px;
-      margin: 0;
-      padding: 0;
-      float: left; }
-      .site-header .header-branding .branding-title a {
-        text-decoration: none !important; }
-    .site-header .header-branding .branding-description {
-      font-size: 16px;
-      font-size: 1rem;
-      display: none; }
-  .site-header .header-nav {
-    float: right; }
-
-.header-nav ul {
-  padding: 0;
-  margin: 0; }
-.header-nav li {
-  float: left;
-  padding: 0;
-  margin: 0;
-  list-style: none; }
-  .header-nav li:hover > a, .header-nav li.focus > a {
-    background-color: black;
-    color: white; }
-.header-nav a {
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 50px;
-  display: inline-block;
-  padding: 0 10px;
-  text-decoration: none; }
-.header-nav .current_page_item > a,
-.header-nav .current-menu-item > a,
-.header-nav .current_page_ancestor > a,
-.header-nav .current-menu-ancestor > a {
-  background-color: black;
-  color: white; }
-
 /* Navigation. */
 .sticky {
   background-color: white; }
